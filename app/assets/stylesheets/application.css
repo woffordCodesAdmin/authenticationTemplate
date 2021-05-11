@@ -1,0 +1,23 @@
+/* Media Queries */
+
+
+/* Desktop View */
+@media (min-width: 1480px) {
+    body {
+      background-color: lightblue;
+    }
+  }
+
+/* Ipad Mid  */
+@media (min-width: 880px) {
+    body {
+      background-color: salmon;
+    }
+  }
+
+/* Mobile */
+@media (min-width: 480px) {
+    body {
+      background-color: lightgreen;
+    }
+  }

@@ -10,7 +10,7 @@
     </head>
     <body>
 
-        <h1 class="login">Login</h1>
+        <h3 class="login">Login</h3>
             <form action="/sessions" method="POST">
                 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> 
                 <input type="email" name="login[email]" placeholder="Email"> 
@@ -30,13 +30,13 @@
 
             </div>
 
-        <h1 class="registration">Registration</h1>
+        <h3 class="registration">Registration</h3>
             <form action="/users" method="POST">
-                <input type="hidden" name="user[name]" value="">
-                <input type="name" name="user[name]" placeholder=""> 
-                <input type="email" name="user[email]" placeholder=""> 
-                <input type="password" name="user[password]" placeholder=""> 
-                <input type="password" name="user[password_confirmation]" placeholder=""> 
+                <input type="hidden" name="user[name]" value="<%=form_authenticity_token%>">
+                <input type="name" name="user[name]" placeholder="Name"> 
+                <input type="email" name="user[email]" placeholder="Email"> 
+                <input type="password" name="user[password]" placeholder="Password"> 
+                <input type="password" name="user[password_confirmation]" placeholder="Password Confirmation"> 
                 <input type="submit" name="submit" placeholder="submit"> 
             </form>
 
@@ -49,6 +49,138 @@
             </div>
        
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <script src=""></script>
+        <script>
+            
+            const getAstroData = () => {
+                var AstroAppRestApIs = require('astro_app_rest_ap_is');
+                var defaultClient = AstroAppRestApIs.ApiClient.instance;
+                var api = new AstroAppRestApIs.ChartsAndDetailsApi()
+                var body = {
+                "chart" : {
+                    "chartData" : {
+                    "chartName" : "Chart1 REST API",
+                    "chartDate" : { },
+                    "lng" : 15.501,
+                    "lat" : 27.5,
+                    "elev" : 1,
+                    "tz" : "Australia/Brisbane",
+                    "zodiacID" : 100,
+                    "houseSystemID" : 1,
+                    "coordSys" : "G",
+                    "version" : 1
+                    },
+                    "houseCusps" : [ 0, 56.93525558719873, 83.25745421804797, 106.74889194032444, 131.57180262843968, 161.30469178328167, 197.87174209003723, 236.93525558719872, 263.257454218048, 286.7488919403244, 311.5718026284397, 341.30469178328167, 17.87174209003722, 56.93525558719873 ],
+                    "objects" : [ {
+                    "id" : 0,
+                    "lat" : -2.4185262607601368E-5,
+                    "lng" : 132.5530611764038,
+                    "speed" : 0.9580980697973276
+                    }, {
+                    "id" : 1,
+                    "lat" : 0.18472555283975323,
+                    "lng" : 93.53453038354613,
+                    "speed" : 14.674778238770797
+                    }, {
+                    "id" : 2,
+                    "lat" : -1.3928250243447262,
+                    "lng" : 159.86355817522923,
+                    "speed" : 0.9883563240819169
+                    }, {
+                    "id" : 3,
+                    "lat" : -4.753016683251441,
+                    "lng" : 89.71936319181324,
+                    "speed" : 0.6783372162947274
+                    }, {
+                    "id" : 4,
+                    "lat" : 0.42855807310554445,
+                    "lng" : 93.47211211448054,
+                    "speed" : 0.6659960311692098
+                    }, {
+                    "id" : 5,
+                    "lat" : -1.0888236556291035,
+                    "lng" : 53.51205084806141,
+                    "speed" : 0.12180744117520598
+                    }, {
+                    "id" : 6,
+                    "lat" : -1.6848965120363257,
+                    "lng" : 333.1183499288868,
+                    "speed" : -0.06802003882006169
+                    }, {
+                    "id" : 7,
+                    "lat" : 0.7344924887884263,
+                    "lng" : 158.67161566181642,
+                    "speed" : 0.05794192721152667
+                    }, {
+                    "id" : 8,
+                    "lat" : 1.7684753833886018,
+                    "lng" : 225.08081533606764,
+                    "speed" : 0.004713567796983999
+                    }, {
+                    "id" : 9,
+                    "lat" : 13.651622194093484,
+                    "lng" : 162.87797198775937,
+                    "speed" : 0.031318995996427394
+                    }, {
+                    "id" : 11,
+                    "lat" : 0,
+                    "lng" : 91.49616109076942,
+                    "speed" : -0.0033910007050202036
+                    }, {
+                    "id" : 15,
+                    "lat" : 4.955307900081983,
+                    "lng" : 347.9524244980293,
+                    "speed" : -0.035600876658640764
+                    } ]
+                },
+                "calcRequestProps" : {
+                    "needImage" : "Y",
+                    "needAspects" : "Y"
+                },
+                "params" : {
+                    "objects" : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 13, 15 ],
+                    "aspects" : [ {
+                    "angle" : 0,
+                    "orb" : 9
+                    }, {
+                    "angle" : 30,
+                    "orb" : 1
+                    }, {
+                    "angle" : 45,
+                    "orb" : 1
+                    }, {
+                    "angle" : 60,
+                    "orb" : 7
+                    }, {
+                    "angle" : 90,
+                    "orb" : 8
+                    }, {
+                    "angle" : 120,
+                    "orb" : 9
+                    }, {
+                    "angle" : 135,
+                    "orb" : 2
+                    }, {
+                    "angle" : 150,
+                    "orb" : 4
+                    }, {
+                    "angle" : 180,
+                    "orb" : 10
+                    } ]
+                }
+                }; // {{ChartDataRequest}} Chart information to be used to calculate a new horoscope.
+                var key = key_example; // {{String}} AstroApp API key
+
+                var callback = function(error, data, response) {
+                if (error) {
+                    console.error(error);
+                } else {
+                    console.log('API called successfully. Returned data: ' + data);
+                }
+                };
+                api.chartData(bodykey, callback);
+            }
+
+
+        </script>
     </body>
 </html>

@@ -14,6 +14,7 @@ class UsersController < ApplicationController
             flash[:register_errors] = user.errors.full_messages
             redirect_to '/'
 
+        end
     end
 
     private
